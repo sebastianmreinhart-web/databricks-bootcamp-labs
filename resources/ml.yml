@@ -23,15 +23,15 @@ resources:
 targets:
   dev:
     resources:
-      model_serving_endpoints:
-        churn_endpoint:
-          name: churn-endpoint          # dev mode prefixes it: dev_<you>_churn-endpoint
-          config:
-            served_entities:
-              - entity_name: ${var.catalog}.${resources.schemas.sales.name}.churn_model
-                entity_version: ${var.churn_model_version}
-                workload_size: Small
-                scale_to_zero_enabled: true
-          tags:
-            - key: project
-              value: bootcamp
+       model_serving_endpoints:
+         churn_endpoint:
+           name: churn-endpoint          # dev mode prefixes it: dev_<you>_churn-endpoint
+           config:
+             served_entities:
+               - entity_name: ${var.catalog}.${resources.schemas.sales.name}.churn_model
+                 entity_version: ${var.churn_model_version}
+                 workload_size: Small
+                 scale_to_zero_enabled: true
+           tags:
+             - key: project
+               value: bootcamp
